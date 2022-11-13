@@ -13,7 +13,6 @@ const Footer = () => {
       <div className="mx-auto max-w-screen-xl">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            {/*<span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Mini</span>*/}
             <p className={"w-[600px] text-white"}>
               Wanna know a secret?
               I make £0 from most of my drum covers because of copyright so these are the best ways to
@@ -21,7 +20,7 @@ const Footer = () => {
             </p>
             <p className={"text-white mt-1"}>please only do it if you can afford to as i can&rsquo;t offer refunds</p>
 
-            <p className={"text-white text-sm mt-2"}>please only do it if you can afford to as i can't offer refunds</p>
+            <p className={"text-white text-sm mt-2"}>please only do it if you can afford to as i can&apos;t offer refunds</p>
           </div>
           <div className="flex w-1/2 h-full m-auto justify-around align-middle">
             <div>
