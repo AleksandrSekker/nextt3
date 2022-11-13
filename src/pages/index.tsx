@@ -20,18 +20,18 @@ const Home = () => {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen></iframe>
-          <iframe width="320" height="180" src="https://www.youtube.com/embed/mtQVYAh2ONo"
+          <iframe className={"rounded-lg"} width="320" height="180" src="https://www.youtube.com/embed/mtQVYAh2ONo"
             title="YouTube video player" frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen></iframe>
         </div>
         <h2 className={"text-center text-[35px] mt-5 mb-4"}>MINI&apos;S VLOGS</h2>
         <div className={"flex flex-row justify-center gap-5"}>
-          <iframe className={"rounded-lg"} width="320" height="180" src="https://www.youtube.com/embed/pJyA2377DVQ" title="YouTube video player"
+          <iframe className={"rounded-lg"} width="320" height="180" src="https://www.youtube.com/embed/qQ7jGR7nYyA" title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen></iframe>
-          <iframe width="320" height="180" src="https://www.youtube.com/embed/mtQVYAh2ONo"
+          <iframe className={"rounded-lg"} width="320" height="180" src="https://www.youtube.com/embed/w8zP-p-MgRU"
             title="YouTube video player" frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen></iframe>
