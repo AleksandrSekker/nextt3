@@ -1,0 +1,11 @@
+.icons {
+    font-size: 24px;
+    /*margin: 1rem;*/
+    color: #fff;
+    transition-duration: 1s;
+    transition-property: transform;
+}
+.icons:hover {
+    color: black;
+    transform: rotate(360deg);
+}
