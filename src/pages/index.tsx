@@ -37,8 +37,8 @@ const Home = () => {
             allowFullScreen></iframe>
         </div>
         <div className={"mt-8 mb-4 flex flex-row gap-4"}>
-          <Image className={"rounded-lg"} src={"https://static.wixstatic.com/media/680512_978017e8de484a2498425c3031509bfc~mv2.png/v1/fill/w_1026,h_360,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/680512_978017e8de484a2498425c3031509bfc~mv2.png"} alt={'merch'} width={400} height={400} />
-          <Image className={"rounded-lg"} src={"https://static.wixstatic.com/media/680512_e9f30b4150ca4a66a2acdc5791ef40c6~mv2.png/v1/fill/w_868,h_360,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/CAMEO.png"} alt={'merch'} width={400} height={400} />
+          <Image className={"rounded-lg"} src={"https://static.wixstatic.com/media/680512_978017e8de484a2498425c3031509bfc~mv2.png/v1/fill/w_1026,h_360,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/680512_978017e8de484a2498425c3031509bfc~mv2.png"} alt={'merch'} width={400} height={165} />
+          <Image className={"rounded-lg"} src={"https://static.wixstatic.com/media/680512_e9f30b4150ca4a66a2acdc5791ef40c6~mv2.png/v1/fill/w_868,h_360,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/CAMEO.png"} alt={'merch'} width={400} height={165} />
         </div>
       </section>
 
