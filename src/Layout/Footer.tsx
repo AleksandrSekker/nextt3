@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="mx-auto max-w-screen-xl">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <p className={"w-[600px] text-white"}>
+            <p className={"max-w-[600px] text-white"}>
               Wanna know a secret?
               I make £0 from most of my drum covers because of copyright so these are the best ways to
               help me continute calling this my job!
@@ -22,7 +22,7 @@ const Footer = () => {
 
             <p className={"text-white text-sm mt-2"}>please only do it if you can afford to as i can&apos;t offer refunds</p>
           </div>
-          <div className="flex w-1/2 h-full m-auto justify-around align-middle">
+          <div className="flex flex-col gap-4 md:flex-row w-1/2 h-full md:m-auto justify-around align-middle">
             <div>
               <Button3d text={"Patreon"} icon={faPatreon} />
             </div>
