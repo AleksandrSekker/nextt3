@@ -6,7 +6,7 @@ import "../styles/globals.css";
 import { store } from "../store/store";
 import { Provider } from "react-redux";
 import Layout from "../Layout/Layout";
-
+import {appWithTranslation} from "next-i18next";
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
@@ -21,5 +21,4 @@ const MyApp: AppType<{ session: Session | null }> = ({
     </Provider>
   );
 };
-
-export default trpc.withTRPC(MyApp);
+export default trpc.withTRPC(appWithTranslation(MyApp))

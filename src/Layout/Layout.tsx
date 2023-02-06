@@ -9,7 +9,7 @@ const Layout = ({
     children: React.ReactNode
 }) => {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col justify-between">
       <Head>
         <title>MINI FAIRHURST</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

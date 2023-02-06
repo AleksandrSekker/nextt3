@@ -1,16 +1,19 @@
 import { useSession } from "next-auth/react";
 import {CircleLoader} from "react-spinners";
 import Image from "next/image";
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import type { GetStaticProps } from 'next'
 const Home = () => {
   const { data: session, status } = useSession();
 
   if (status === "loading") {
     <CircleLoader color="#36d7b7" />
   }
-
+  const { t } = useTranslation('common')
   return (
     <div className="flex px-4 h-full flex-col items-center">
-      <h1 className="text-[40px] md:text-[91px] text-orangeColor">MINI FAIRHURST</h1>
+      <h1 className="text-[40px] md:text-[91px] text-orangeColor">{t('h1')} MINI FAIRHURST</h1>
       <p >Hiiiiii {session?.user?.name ? session.user?.name: "everyone"}  here&lsquo;s my website wow cool nice </p>
       <p className={"max-w-3xl text-center mt-4"}>Here you can find everything to do with me, from my setup, my band and if you wanna work with me or ask me some questions you can contact me too wow isn&lsquo;t that exciting</p>
       <section>
@@ -45,5 +48,15 @@ const Home = () => {
     </div>
   );
 };
+
+export const getStaticProps: GetStaticProps = async ({
+  locale,
+}) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'en', [
+      'common',
+    ])),
+  },
+})
 
 export default Home;
