@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
+    "build": "i18nexus pull && next build",
+    "dev": "i18nexus pull && next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "start": "next start"
+    "start": "i18nexus pull && next start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",

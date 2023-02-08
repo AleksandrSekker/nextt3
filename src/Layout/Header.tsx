@@ -7,12 +7,14 @@ import {DropDown} from "../components/DropDown/DropDown";
 import {Select} from "../components/Select/Select";
 import Sidebar from "./Sidebar/Sidebar";
 import Link from "next/link";
-import locales from "../constants/general";
+import languages from "../constants/general";
+import {useRouter} from "next/router";
 
 const Header = () => {
   const { data: session } = useSession();
-
-console.log('locale', locales.map(({title, id, icon}) => (title)))
+  const {locales, locale} = useRouter()
+  console.log('locales', locales)
+  console.log('locale', locale)
   return (
     <header>
       <nav className="bg-pinkHeader h-[68px] border-gray-200 px-4 lg:px-6 dark:bg-gray-800">
@@ -34,7 +36,7 @@ console.log('locale', locales.map(({title, id, icon}) => (title)))
               )}
             </div>
             <div className={'hidden lg:flex'}>
-              <Select data={locales.map(({title, id, icon}) => (
+              <Select data={languages.map(({title, id, icon}) => (
                 {title: title.toUpperCase(), id, icon}
               ))} />
             </div>

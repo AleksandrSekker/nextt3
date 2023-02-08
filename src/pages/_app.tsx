@@ -7,6 +7,7 @@ import { store } from "../store/store";
 import { Provider } from "react-redux";
 import Layout from "../Layout/Layout";
 import {appWithTranslation} from "next-i18next";
+
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },

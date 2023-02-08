@@ -1,13 +1,17 @@
 import {useEffect, useState} from 'react'
 import Flag from 'react-world-flags'
 import { Listbox, Transition } from '@headlessui/react'
+import Link from "next/link";
+import {useRouter} from "next/router";
 
 interface ISelectProps {
   data: {title: string, icon: string, id: number}[],
 }
 
 export const Select = ({data}: ISelectProps) => {
-  const [selectedLanguage, setSelectedLanguage] = useState(data[0])
+  const {locale} = useRouter()
+  const selectedLanguageInitial = data.filter((language) => language.title.toLowerCase() === locale)
+  const [selectedLanguage, setSelectedLanguage] = useState(selectedLanguageInitial ? selectedLanguageInitial[0] : data[0] )
 
   useEffect(() => {
     if (selectedLanguage) {
@@ -42,19 +46,20 @@ export const Select = ({data}: ISelectProps) => {
               <Listbox.Options as="div" className={"absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"} static>
                 <div className={"px-1 py-1 list-none "}>
                   {data.map((item) => (
-                    <Listbox.Option key={item.id} value={item}>
+                    <Link key={item.id} href={'#'} locale={item.title.toLowerCase()} >
+                      <Listbox.Option value={item}>
+                        <button
+                          className={`group flex w-full items-center rounded-md px-2 py-2 text-sm list-none`}>
+                          <div className={'list-none text-black text-gray-400 mr-auto'}>
+                            {item.title}
+                          </div>
+                          <div className="mr-2 h-5 w-5">
+                            <Flag code={item.icon} />
+                          </div>
+                        </button>
+                      </Listbox.Option>
+                    </Link>
 
-                      <button
-                        className={`group flex w-full items-center rounded-md px-2 py-2 text-sm list-none`}>
-                        <div className={'list-none text-black text-gray-400 mr-auto'}>
-                          {item.title}
-                        </div>
-                        <div className="mr-2 h-5 w-5">
-                          <Flag code={item.icon} />
-                        </div>
-                      </button>
-
-                    </Listbox.Option>
                   ))}
                 </div>
               </Listbox.Options>

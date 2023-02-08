@@ -7,6 +7,7 @@ import {
 import style from './styles.module.css'
 import Link from "next/link";
 import Button3d from "../components/Button3d/Button3d";
+
 const Footer = () => {
   return (
     <footer className="p-4 bg-white sm:p-6 bg-pinkHeader dark:bg-gray-800">
@@ -20,7 +21,6 @@ const Footer = () => {
             </p>
             <p className={"text-white mt-1"}>please only do it if you can afford to as i can&rsquo;t offer refunds</p>
 
-            <p className={"text-white text-sm mt-2"}>please only do it if you can afford to as i can&apos;t offer refunds</p>
           </div>
           <div className="flex flex-col gap-4 md:flex-row w-1/2 h-full md:m-auto justify-around align-middle">
             <div>
