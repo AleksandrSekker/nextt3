@@ -31,5 +31,5 @@ module.exports = {
         }
     },
   },
-  plugins: [CardFlip],
+  plugins: [require('@tailwindcss/aspect-ratio'), CardFlip],
 };

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import type { GetStaticProps } from 'next'
+import Video from "../components/Home/Video";
 const Home = () => {
   const { status } = useSession();
 
@@ -19,32 +20,31 @@ const Home = () => {
       <section>
         <h2 className={"text-center text-[35px] mt-5 mb-4"}>{t('covers')}</h2>
         <div className={"flex flex-col md:flex-row justify-center gap-5"}>
-          <iframe className={"rounded-lg"} width="320" height="180" src="https://www.youtube.com/embed/pJyA2377DVQ" title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
-          <iframe className={"rounded-lg"} width="320" height="180" src="https://www.youtube.com/embed/mtQVYAh2ONo"
-            title="YouTube video player" frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
+          <Video srcId='pJyA2377DV' />
+          <Video srcId='mtQVYAh2ONo' />
         </div>
         <h2 className={"text-center text-[35px] mt-5 mb-4"}>{t('vlogs')}</h2>
-        <div className={"flex flex-col md:flex-row justify-center gap-5"}>
-          <iframe className={"rounded-lg"} width="320" height="180" src="https://www.youtube.com/embed/qQ7jGR7nYyA" title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
-          <iframe className={"rounded-lg"} width="320" height="180" src="https://www.youtube.com/embed/w8zP-p-MgRU"
-            title="YouTube video player" frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen></iframe>
+        <div className="flex flex-col md:flex-row justify-center gap-5">
+          <Video srcId='qQ7jGR7nYyA' />
+          <Video srcId='w8zP-p-MgRU' />
         </div>
-        <div className={"mt-8 mb-4 flex flex-col md:flex-row gap-4"}>
-          <Image className={"rounded-lg"} src={"https://static.wixstatic.com/media/680512_978017e8de484a2498425c3031509bfc~mv2.png/v1/fill/w_1026,h_360,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/680512_978017e8de484a2498425c3031509bfc~mv2.png"} alt={'merch'} width={400} height={165} />
-          <Image className={"rounded-lg"} src={"https://static.wixstatic.com/media/680512_e9f30b4150ca4a66a2acdc5791ef40c6~mv2.png/v1/fill/w_868,h_360,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/CAMEO.png"} alt={'merch'} width={400} height={165} />
+        <div className={"mt-8 mb-4 flex flex-col md:flex-row justify-center gap-5 w-full"}>
+          <Image
+            className={"rounded-lg w-full aspect-[16/9]"}
+            src={"https://static.wixstatic.com/media/680512_978017e8de484a2498425c3031509bfc~mv2.png/v1/fill/w_1026,h_360,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/680512_978017e8de484a2498425c3031509bfc~mv2.png"}
+            alt={'merch'}
+            width={300}
+            height={300}
+          />
+          <Image
+            className={"rounded-lg w-full aspect-[16/9]"}
+            src={"https://static.wixstatic.com/media/680512_e9f30b4150ca4a66a2acdc5791ef40c6~mv2.png/v1/fill/w_868,h_360,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/CAMEO.png"}
+            alt={'merch'}
+            width={300}
+            height={300}
+          />
         </div>
       </section>
-
     </div>
   );
 };

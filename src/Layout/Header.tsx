@@ -8,13 +8,10 @@ import {Select} from "../components/Select/Select";
 import Sidebar from "./Sidebar/Sidebar";
 import Link from "next/link";
 import languages from "../constants/general";
-import {useRouter} from "next/router";
 
 const Header = () => {
   const { data: session } = useSession();
-  const {locales, locale} = useRouter()
-  console.log('locales', locales)
-  console.log('locale', locale)
+
   return (
     <header>
       <nav className="bg-pinkHeader h-[68px] border-gray-200 px-4 lg:px-6 dark:bg-gray-800">
