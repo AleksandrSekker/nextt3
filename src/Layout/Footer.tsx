@@ -32,10 +32,11 @@ const Footer = () => {
           </div>
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-white sm:text-center dark:text-gray-400">© Mini Fairhurst {new Date().getFullYear()}
+        <div className="sm:flex sm:items-center sm:justify-between text-center">
+
+          <span className="text-sm text-white w-100 text-center dark:text-gray-400 order-last sm:order-first">© Mini Fairhurst {new Date().getFullYear()}
           </span>
-          <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+          <div className="flex mt-4 space-x-6 justify-center sm:mt-0">
             <Link href='/'>
               <FontAwesomeIcon icon={faInstagram} className={style.icons} />
             </Link>

@@ -2,12 +2,14 @@ import React from 'react';
 import {signIn, signOut, useSession} from "next-auth/react";
 import Image from "next/image";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faUser, faDrum} from "@fortawesome/free-solid-svg-icons";
+import {faUser} from "@fortawesome/free-solid-svg-icons";
 import {DropDown} from "../components/DropDown/DropDown";
 import {Select} from "../components/Select/Select";
 import Sidebar from "./Sidebar/Sidebar";
 import Link from "next/link";
-import languages from "../constants/general";
+import { locales, selectMiniSetup} from "../constants/general";
+import routes from "../constants/routes";
+import links from "../constants/links";
 
 const Header = () => {
   const { data: session } = useSession();
@@ -33,7 +35,7 @@ const Header = () => {
               )}
             </div>
             <div className={'hidden lg:flex'}>
-              <Select data={languages.map(({title, id, icon}) => (
+              <Select data={locales.map(({title, id, icon}) => (
                 {title: title.toUpperCase(), id, icon}
               ))} />
             </div>
@@ -43,37 +45,23 @@ const Header = () => {
           </div>
           <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
             <ul className="flex flex-col items-center font-medium lg:flex-row lg:space-x-1 lg:mt-0">
-              <Link href={'/'} className="text-white dark:text-white text-white hover:bg-white hover:text-black font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 outline-none focus:outline-none dark:focus:ring-gray-800"
+              <Link href={routes.home} className="text-white dark:text-white text-white hover:bg-white hover:text-black font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 outline-none focus:outline-none dark:focus:ring-gray-800"
                 aria-current="page" >
                 Home
               </Link>
-              {/*<li>*/}
-              {/*  <a href="#"*/}
-              {/*    className="text-white dark:text-white text-white hover:bg-white hover:text-black font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 outline-none focus:outline-none dark:focus:ring-gray-800"*/}
-              {/*    aria-current="page">Home</a>*/}
-              {/*</li>*/}
-              <DropDown title={"Mini's setup"} data={[
-                {title: 'Drums && cymbals', link: "/", icon: faDrum, id: 1},
-                {title: 'First time drum buyers', link: "/", icon: faDrum, id: 2},
-                {title: 'Drum accessories', link: "/", icon: faDrum, id: 3},
-                {title: 'Drum hardware', link: "/", icon: faDrum , id: 4},
-                {title: 'Recording gear', link: "/", icon: faDrum, id: 5},
-                {title: 'Streaming setup', link: "/", icon: faDrum, id: 6},
-                {title: 'Lightning', link: "/", icon: faDrum, id: 7},
-                {title: 'Random fun stuff', link: "/", icon: faDrum,  id: 8},
-              ]} />
-
+              <DropDown title={"Mini's setup"} data={selectMiniSetup} />
               <li>
-                <a href="#"
+                <a href={links.patreon} target="_blank" rel="noopener noreferrer"
                   className="text-white hover:bg-white hover:text-black font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 outline-none focus:outline-none dark:focus:ring-gray-800">Patreon</a>
               </li>
               <li>
-                <a href="#"
+                <a href={links.merch}
+                  target="_blank" rel="noopener noreferrer"
                   className="text-white hover:bg-white hover:text-black  hover:bg-gray-50 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 outline-none focus:outline-none dark:focus:ring-gray-800">Merch</a>
               </li>
-              <Link href='/redpoint'
+              <Link href={routes.redpoint}
                 className="text-white hover:bg-white hover:text-black  font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 outline-none focus:outline-none dark:focus:ring-gray-800">Redpoint</Link>
-              <Link href='/contact'
+              <Link href={routes.contact}
                 className="text-white hover:bg-white hover:text-black  font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 outline-none focus:outline-none dark:focus:ring-gray-800">Contact
               </Link>
 

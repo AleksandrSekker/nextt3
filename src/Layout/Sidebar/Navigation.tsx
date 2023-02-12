@@ -18,7 +18,7 @@ const menuItemData = [
   {icon: faDrum, text: 'Patreon', key: 2},
   {icon: faDrum, text: 'Merch', key: 3},
   {icon: faDrum, text: 'Redpoint', key: 4},
-  {icon: faContactCard, text: 'Contact', key: 4},
+  {icon: faContactCard, text: 'Contact', key: 5},
 ]
 export const Navigation = () => (
   <motion.ul className={styles.ul} variants={variants}>

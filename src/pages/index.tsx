@@ -31,15 +31,15 @@ const Home = () => {
         <div className={"mt-8 mb-4 flex flex-col md:flex-row justify-center gap-5 w-full"}>
           <Image
             className={"rounded-lg w-full aspect-[16/9]"}
-            src={"https://static.wixstatic.com/media/680512_978017e8de484a2498425c3031509bfc~mv2.png/v1/fill/w_1026,h_360,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/680512_978017e8de484a2498425c3031509bfc~mv2.png"}
+            src={"/images/merch.png"}
             alt={'merch'}
             width={300}
             height={300}
           />
           <Image
             className={"rounded-lg w-full aspect-[16/9]"}
-            src={"https://static.wixstatic.com/media/680512_e9f30b4150ca4a66a2acdc5791ef40c6~mv2.png/v1/fill/w_868,h_360,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/CAMEO.png"}
-            alt={'merch'}
+            src={"/images/cameo.png"}
+            alt={'cameo'}
             width={300}
             height={300}
           />
