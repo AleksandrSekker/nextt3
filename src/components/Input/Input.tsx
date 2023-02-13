@@ -1,6 +1,8 @@
 import React from 'react';
-import {t} from "i18next";
-import type {DeepMap, FieldError, FieldName, FieldValues, UseFormRegister} from "react-hook-form";
+import type {
+  FieldValues,
+  UseFormRegister
+} from "react-hook-form";
 interface InputProps {
     title: string;
     placeholder: string;
@@ -8,7 +10,7 @@ interface InputProps {
     className?: string;
     register: UseFormRegister<FieldValues>;
     name: string;
-    errors: DeepMap<FieldName<FieldValues>, FieldError>;
+    errors: any;
 }
 
 
@@ -22,7 +24,7 @@ const Input = ({title, placeholder, type, className, name, register, errors}: In
         :
         <input className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
           type={type} placeholder={placeholder} {...register(name)}/>}
-      {isErrorExist && <div className='mt-2 text-red-600'>{errors.message}</div>}
+      {isErrorExist && <div className='mt-2 text-red-600'>{errors?.message}</div>}
     </div>
   );
 };

@@ -15,10 +15,9 @@ const Contact = () => {
     email: z.string().nonempty().email(),
     message: z.string().min(8),
   });
-  const formOptions = { resolver: zodResolver(schema), mode: "onChange" };
   const {
-    register, handleSubmit, formState, getValues, watch
-  } = useForm(formOptions);
+    register, handleSubmit, formState, watch
+  } = useForm({resolver: zodResolver(schema), mode: "onChange"});
   const { errors } = formState;
   const sendHandler = useCallback(() => {
     console.log('watch', watch())
@@ -45,14 +44,27 @@ const Contact = () => {
           </div>
         </div>
         <form className="" onSubmit={handleSubmit(sendHandler)}>
-          <Input title={t('name')} placeholder={t('namePlaceholder')} type={'text'}
+          <Input
+            title={t('name')}
+            placeholder={t('namePlaceholder')}
+            type={'text'}
             register={register}
             name="name"
-            errors={errors.name} />
-          <Input className={'mt-8'} title={t('email')} placeholder={t('emailPlaceholder')} type={'email'}             register={register}
+            errors={errors.name}
+          />
+          <Input
+            className={'mt-8'}
+            title={t('email')}
+            placeholder={t('emailPlaceholder')}
+            type={'email'}
+            register={register}
             name="email"
-            errors={errors.email} />
-          <Input className="mt-8" title={t('message')} placeholder={t('messagePlaceholder')} type={'textarea'}             register={register}
+            errors={errors.email}
+          />
+          <Input className="mt-8" title={t('message')}
+            placeholder={t('messagePlaceholder')}
+            type={'textarea'}
+            register={register}
             name="message"
             errors={errors.message} />
           <div className="mt-8">
