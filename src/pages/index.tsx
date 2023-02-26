@@ -12,6 +12,7 @@ const Home = () => {
     <CircleLoader color="#36d7b7" />
   }
   const { t } = useTranslation('home')
+
   return (
     <div className="flex px-4 h-full flex-col items-center">
       <h1 className="text-[40px] md:text-[91px] text-orangeColor">{t('title')}</h1>

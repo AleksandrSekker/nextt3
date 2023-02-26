@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, {useCallback } from 'react';
 import Image from "next/image";
 import Input from "../components/Input/Input";
 import type {GetStaticProps} from "next";
@@ -66,7 +66,8 @@ const Contact = () => {
             type={'textarea'}
             register={register}
             name="message"
-            errors={errors.message} />
+            errors={errors.message}
+          />
           <div className="mt-8">
             <button
               className="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
